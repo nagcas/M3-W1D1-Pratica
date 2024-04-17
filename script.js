@@ -9,11 +9,29 @@ console.log("It's working...");
     Ritorna 'true' se uno dei due è 50 o se la somma dei due è 50.
 */
 
+const btn = document.querySelector(".btn");
+
+btn.addEventListener("click", function() {
+    const n1 = document.querySelector(".num_1").value;
+    const n2 = document.querySelector(".num_2").value;
+    const risultato = document.querySelector(".risultato");
+    let n1_ = parseInt(n1);
+    let n2_ = parseInt(n2);
+    console.log(n1, n2);
+    if (n1_ === 50 || n2_ === 50 || n1_ + n2_ === 50) {
+        console.log("true");
+        risultato.innerHTML = "<h2>Risultato: true</h2>";
+    } else {
+        risultato.innerHTML = "<h2>Dati non validi</h2>"
+    }
+});
+
+
 function control50 (num1, num2) {
     if (num1 === 50 || num2 === 50 || num1 + num2 === 50) {
         return true;
     } else {
-        return 1;
+        return "Dati non validi";
     }
 };
 
