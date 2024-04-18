@@ -377,12 +377,19 @@ console.log(contrario(stringaParola));
 
 function sottoArray(arrayValori, y) {
     let newArray = [];
+    let i = 0;
+    let lunghezza = arrayValori.length;
+
+    while (i < lunghezza) {
+        newArray.push(arrayValori.slice(i, i + y));
+        i += y
+    }
     return newArray;
 }
 
 console.log("Esercizio Extra n. 8");
-const arrayValori = [1, 2, 3, 4];
-const y = 2;
+const arrayValori = [1, 2, 3, 4, 5];
+const y = 4;
 console.log(sottoArray(arrayValori, y));
 
 /*
@@ -396,7 +403,7 @@ console.log(sottoArray(arrayValori, y));
     '-###-' 1
     '#####' 2
      01234
-     
+
     Es.
     X = 5  
     '----#----' 0
