@@ -392,25 +392,41 @@ console.log(sottoArray(arrayValori, y));
 
     Es.
     X = 3
-    '--#--'
-    '-###-'
-    '#####'
+    '--#--' 0
+    '-###-' 1
+    '#####' 2
+     01234
+     
     Es.
     X = 5  
-    '----#----' 5
-    '---###---' 4
-    '--#####--' 3
-    '-#######-' 2
-    '#########' 1
+    '----#----' 0
+    '---###---' 1
+    '--#####--' 2
+    '-#######-' 3
+    '#########' 4
+     012345678
 */
 
 function piramide(number) {
-    console.log(number);
+    let rigo = "";
+    // conteggia il rigo
+    for (let r = 0; r < number; r++) {
+        // conteggia le colonne
+        for (let c = 0; c < (number * 2) - 1; c++) {
+            if (c >= (number - r - 1) && c <= (number + r - 1)) {
+                rigo += "#";
+            } else {
+                rigo += " ";
+            }
+        }
+        console.log(rigo);
+        rigo = "";
+    }
     
-}
+};
 
 console.log("Esercizio Extra n. 9");
-let numberPositivo = 3;
+let numberPositivo = 5;
 piramide(numberPositivo);
 
 
